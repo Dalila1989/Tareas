@@ -4,9 +4,12 @@ import deleteIcon from './components/deleteIcon.js';
 const btn = document.querySelector('[data-form-btn]');
 
 const createTask = (evento) => {
+  const calendar = document.querySelector('[data-form-date]');
   evento.preventDefault();
   const input = document.querySelector('[data-form-input]');
   const value = input.value;
+  const date = calendar.value;
+  const dateFormat = moment(date).format("DD/MM/YYYY")
   const list = document.querySelector('[data-list]');
   const task = document.createElement('li');
   task.classList.add('card');
